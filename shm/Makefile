@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++11 -g -o 
+CXXFLAGS = -std=c++11 -Wall -g -o 
 inc = common.h
 
 all:clean read write
