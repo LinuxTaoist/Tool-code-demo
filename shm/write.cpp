@@ -1,6 +1,6 @@
 /*
 ********************************************************************************
-* Copyright (C) 2021, xiang <dx_65535@163.com>.
+* Copyright (C) 2021, xiang.D <dx_65535@163.com>.
 * All right reserved.
 *
 * File Name   : write.cpp
