@@ -13,7 +13,6 @@
 ********************************************************************************
 */
 
-
 #include <stdio.h>
 #include <signal.h>
 #include <iostream>
@@ -25,6 +24,14 @@ int main(int argc, char *argv[])
     int signo = 0;
     char mode[1] = {0};
 
+    if (argc < 2) {
+        fprintf(stderr, "Usage: %s <string>\n", argv[0]);
+        exit(EXIT_FAILURE);
+    }
+
+    fprintf(stdout, "1: SIGUSR1\n");
+    fprintf(stdout, "2: SIG_TEST1\n");
+    fprintf(stdout, "3: default\n");
     while (1) {
         signo = 0;
         fprintf(stdout, "Select signal to send %s: ", argv[1]);
@@ -40,7 +47,7 @@ int main(int argc, char *argv[])
             signo = SIG_DEFAULT;
             break;
         }
-        fprintf(stdout, "mode: %d %d\n", signo, SIG_DEFAULT);
+        //fprintf(stdout, "mode: %d %d\n", signo, SIG_DEFAULT);
         kill(atoi(argv[1]), signo);
     }
     return 0;
