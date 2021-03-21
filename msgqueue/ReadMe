@@ -1,0 +1,6 @@
+本例程主要实现Linux进程间通信中的消息队列方式。
+
+主要问题：
+1. ftok的作用？当不使用ftok时，msgget参数key可以传int数即可，ftok的具体作用何在。
+
+2. 消息队列获取到的字符串当作strcmp的参数时，会导致程序coredump。

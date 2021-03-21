@@ -24,10 +24,18 @@
 
 int main(int argc, char *argv[])
 {
-    int msg_id, ret = 0;
+    int msg_id, key, ret = 0;
     struct MsgFrame msg_recv = {0, {0}};
 
-    msg_id = msgget(MSG_QUEUE1, IPC_EXCL);
+    /* Obtain the standard key according to the file path */
+    key = ftok(MSGQ_FILE_PATH, MSGQ_ID);
+	if (key < 0)
+	{
+		PRINT_ERR("ftok failed! errno = %d(%s)\n", errno, strerror(errno));
+		goto exit;
+	}
+
+    msg_id = msgget(key, IPC_EXCL);
     if (msg_id < 0) {
         PRINT_ERR("msgget failed! errno = %d(%s)\n", errno, strerror(errno));
         goto exit;

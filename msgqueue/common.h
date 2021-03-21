@@ -16,11 +16,6 @@
 #ifndef __COMMON_H__
 #define __COMMON_H__
 
-#ifdef MSG_QUEUE1
-#undef MSG_QUEUE1
-#endif
-#define MSG_QUEUE1 0x1024
-
 #define DEBUG_LOG_SUPPORT
 
 #ifdef PRINT_ERR
@@ -56,6 +51,16 @@ do{ printf("func: %s line: %d info: " format,    \
 #undef MAX_SIZE
 #endif
 #define MAX_SIZE 1024
+
+#ifdef MSGQ_FILE_PATH
+#undef MSGQ_FILE_PATH
+#endif
+#define MSGQ_FILE_PATH "."
+
+#ifdef MSGQ_ID
+#undef MSGQ_ID
+#endif
+#define MSGQ_ID 'a'
 
 struct MsgFrame {
     int size;
