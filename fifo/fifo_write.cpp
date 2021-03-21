@@ -23,7 +23,7 @@
 
 #define BUFF_SIZE 1024
 
-const char path_name = "~/hdd1/";
+//char path_name[] = "~/hdd1/";
 
 int main(int argc, char *argv[])
 {
