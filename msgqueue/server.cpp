@@ -29,11 +29,11 @@ int main(int argc, char *argv[])
 
     /* Obtain the standard key according to the file path */
     key = ftok(MSGQ_FILE_PATH, MSGQ_ID);
-	if (key < 0)
-	{
-		PRINT_ERR("ftok failed! errno = %d(%s)\n", errno, strerror(errno));
-		goto exit;
-	}
+    if (key < 0)
+    {
+        PRINT_ERR("ftok failed! errno = %d(%s)\n", errno, strerror(errno));
+        goto exit;
+    }
 
     msg_id = msgget(key, IPC_EXCL);
     if (msg_id < 0) {
