@@ -1,0 +1,6 @@
+本例程主要实现Linux进程间通信中的socket方式。
+
+主要问题：
+1. sockaddr_in 和 sockaddr_in不同socket连接区别？
+
+2. socket客户端与服务端握手、拜拜流程。
